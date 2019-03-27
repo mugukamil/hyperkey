@@ -1,0 +1,787 @@
+@import lib/base
+@import reset
+@import common
+
+@import animate
+@import main
+
+body
+  +font-smoothing
+
+.wrapper
+  overflow: hidden
+  margin: 0 auto
+  padding: 0 20px
+
+.container
+  max-width: 1550px
+  margin: 0 auto
+  +screen(320, 768)
+    text-align: center
+  +screen(769, 959)
+    text-align: center
+
+.iphone-container,
+.iphone-container2,
+.iphone-container3,
+.iphone-container4,
+.iphone-container5,
+.iphone-container6
+  +clr
+  +screen(320, 1060)
+    margin-top: 60px
+  +min-screen(1060)
+    margin-bottom: 370px
+
+.logo 
+
+  img
+    max-width: 100% 
+    display: inline-block
+    margin-top: 30px
+
+
+.hamburger
+  display: block
+  position: absolute
+  right: 30px
+  width: 30px
+  height: 40px
+  z-index: 2
+  outline: 0
+  border: 0
+  +min-screen(568px)
+    display: none
+
+.hamburger__inner
+  display: block
+  width: 40px
+  height: 6px
+  margin-top: 12px
+  background: #51b5ec
+  +transition(all 0.2s ease-in-out)
+  &::before, &::after
+    display: block
+    position: absolute
+    content: ""
+    z-index: -1
+    width: 40px
+    height: 6px
+    background: #51b5ec
+    +transition(all 0.2s ease-in-out)
+  &::before
+    top: 0
+  &::after
+    top: 24px
+
+.hamburger--open .hamburger__inner
+  background: none
+  bottom: 0
+  outline: 0
+  &::before, &::after
+    top: 12px
+  &::before
+    +transform(rotate(-45deg))
+  &::after
+    +transform(rotate(45deg))
+
+header
+  margin-top: 35px
+  padding: 0 60px
+  +clr
+  +screen(320, 960)
+    text-align: center
+    padding: 0 40px
+
+  nav
+    float: right
+    margin-top: 41px
+    margin-right: 10px
+    +screen(320, 960)
+      float: none
+      margin-right: 0
+    +max-screen(569px)
+      display: none
+
+    li
+      display: inline-block
+      margin-left: 28px
+      +max-screen(640px)
+        margin-left: 20px
+
+    li a
+      color: #51b5ec
+      font-family: Roboto
+      font-size: 47px
+      font-weight: 100
+      +max-screen(320px)
+        font-size: 30px
+
+
+.teaser
+  margin-top: 120px
+  text-align: center
+  max-width: 1148px
+  margin-right: auto
+  margin-left: auto
+  +screen(320, 640)
+    margin-top: 80px
+
+  p
+    color: #6b6b6b
+    font-family: Roboto
+    font-size: 28px
+    font-weight: 100
+    padding: 0 25px
+    text-indent: 40px
+    +screen(320, 960px)
+      padding: 0 20px
+      text-indent: 0
+      
+
+      
+
+    // &:first-child
+    //   -ms-word-wrap: normal
+    //   word-wrap: normal
+
+.teaser form
+  display: inline-block
+  margin-top: 80px
+  +max-screen(568px)
+    display: none
+
+  input
+    font-family: "roboto"
+    appearance: none
+    -moz-appearance: none
+    -webkit-appearance: none
+    +screen(320, 620)
+      font-size: 22px
+      line-height: 44px
+
+
+  input[type="email"]
+    border: 3px solid #51b5ec
+    font-size: 26px
+    line-height: 52px
+    border-radius: 20px
+    padding: 0 100px 0 20px
+    width: 640px
+    color: #51b5ec
+    font-weight: 100
+    +placeholder-color(#51b5ec)
+    +screen(440, 700)
+      width: 390px
+      padding-right: 20px
+    +max-screen(440)
+      width: 300px
+      padding-right: 20px
+    // &:invalid
+    //   +placeholder-color(#f00)
+
+    &.success
+      +placeholder-color(green)
+    &.error
+      +placeholder-color(red)
+  input[type="submit"]
+    font-size: 24px
+    line-height: 48px
+    border-radius: 0 20px 20px 0
+    padding: 4px 20px
+    margin-left: -96px
+    color: white
+    background: #51b5ec
+    font-weight: 500
+
+// .icons img
+//   +max-screen(768px)
+//     width: 50%
+//   +max-screen(320px)
+//     width: 35%
+
+.iphone
+  +max-screen(400px)
+    width: 75%
+
+.iphone-section
+  // background-image: url(../img/icons/iPhone-6S.png)
+  width: 349px
+  height: 706px
+  margin: 200px auto 295px auto
+  +screen(320, 1060)
+    margin-bottom: 120px
+
+
+  .vimeo
+    position: absolute
+    bottom: 194px
+    right: -120px
+    z-index: -1
+    // +max-screen(768px)
+    //   right: -15%
+    //   top: 200px
+  .youtube
+    position: absolute
+    top: 10px
+    right: -300px
+    z-index: -1
+    // +max-screen(768px)
+    //   right: -25%
+    //   top: 60px
+  .instagram
+    position: absolute
+    top: 230px
+    right: -223px
+    z-index: -1
+  //   +max-screen(768px)
+  //     display: none
+  .drive
+    position: absolute
+    bottom: 38px
+    right: -148px
+    z-index: -1
+    // +max-screen(768px)
+    //   right: -19%
+    //   bottom: 30% 
+  .fb
+    position: absolute
+    top: -53px
+    left: -300px
+    z-index: -1
+    // +max-screen(768px)
+    //   left: -10%
+    //   top: -50px
+  .spotify
+    position: absolute
+    top: -100px
+    right: -120px
+    z-index: -1
+    // +max-screen(768px)
+    //   right: -10%
+    //   top: -50px
+  .face
+    position: absolute
+    top: 50px
+    right: -140px
+    z-index: -1
+    // +max-screen(768px)
+    //   right: -5% 
+    //   top: 50px
+  .yelp
+    position: absolute
+    top: 176px
+    left: -344px
+    z-index: -1
+  //   +max-screen(768px)
+  //     display: none
+  .dropbox
+    position: absolute
+    bottom: 38px
+    left: -148px
+    z-index: -1
+    // +max-screen(768px)
+    //   left: -10%
+    //   bottom: 30% 
+  .giphy
+    position: absolute
+    top: 225px
+    left: -123px
+    z-index: -1
+    // +max-screen(768px) 
+    //   left: -10% 
+    //   top: 180px
+
+  .brushes
+    position: absolute
+    top: 56px
+    left: -107px
+    z-index: -1
+    // +max-screen(768px)
+    //   left: -10%
+    //   top: 30px
+  .tictac
+    position: absolute
+    right: -50px
+    bottom: 320px
+    z-index: -1
+    // +max-screen(768px)
+    //   right: 100px
+    //   top: -55px
+
+.iphone-container2
+  margin-top: 350px
+  +screen(320, 1060)
+    margin-top: 100px
+  +clr
+
+  .text-block
+
+    .mini-icons
+
+      i
+        cursor: pointer
+        display: inline-block
+        margin-right: 10px
+
+      .mini-giphy
+        +s(mini-giphy)
+      .mini-face
+        +s(mini-face)
+      .mini-brushes
+        +s(mini-brushes)
+
+
+.iphone-section2
+  width: 349px
+  float: right
+  margin-right: 163px
+  margin-top: -505px
+  // +min-screen(1060)
+  //   margin-top: -500px
+  +screen(320, 1060)
+    margin-top: 80px
+
+  .face
+    position: absolute
+    top: 50px
+    right: -120px
+    z-index: -1
+    // +max-screen(768px)
+    //   right: -5% 
+    //   top: 50px
+  .giphy
+    position: absolute
+    top: 225px
+    left: -123px
+    z-index: -1
+    // +max-screen(768px) 
+    //   left: -10% 
+    //   top: 180px
+  .brushes
+    position: absolute
+    top: 56px
+    left: -107px
+    z-index: -1
+    // +max-screen(768px)
+    //   left: -10%
+    //   top: 30px
+
+.iphone-container3
+  +clr
+
+  .text-block
+
+    .mini-icons
+
+      i
+        cursor: pointer
+        display: inline-block
+        margin-right: 10px
+
+      .mini-facebook
+        +s(mini-facebook)
+      .mini-instagram
+        +s(mini-instagram)
+      .mini-drive
+        +s(mini-drive)
+      .mini-dropbox
+        +s(mini-dropbox)
+
+.iphone-section3
+  width: 349px
+  float: left
+  margin-top: -510px
+  margin-left: 175px
+  +screen(320, 1059)
+    margin-top: 80px 
+  +min-screen(1060)
+    margin-top: -490px
+    margin-left: 175px
+
+  .facebook3
+    position: absolute
+    top: 20px
+    right: -180px
+    z-index: -1
+    // +max-screen(768px)
+    //   right: -12% 
+    //   top: 60px
+  .instagram3
+    position: absolute
+    top: 65px
+    left: -150px
+    z-index: -1
+    // +max-screen(768px) 
+    //   left: -10% 
+    //   top: 100px
+  .drive
+    position: absolute
+    bottom: 141px
+    right: -148px
+    z-index: -1
+    // +max-screen(768px) 
+    //   right: -12% 
+    //   top: 210px
+  .dropbox
+    position: absolute
+    bottom: 100px
+    left: -148px
+    z-index: -1
+    // +max-screen(768px) 
+    //   left: -12% 
+    //   top: 250px
+
+.iphone-container4
+  +clr
+
+  .text-block
+
+    .mini-icons
+
+      i
+        cursor: pointer
+        display: inline-block
+        margin-right: 10px
+
+      .mini-yeip
+        +s(mini-yeip)
+      .mini-youtube
+        +s(mini-youtube)
+      .mini-spotify
+        +s(mini-spotify)
+
+
+.iphone-section4
+  width: 349px
+  float: right
+  margin-top: -500px
+  position: relative
+  +screen(320, 1060)
+    margin-top: 80px
+  // +min-screen(1060)
+  //   margin-top: -430px
+
+
+  .youtube4
+    position: absolute
+    top: 50px
+    right: -170px
+    z-index: -1
+    // +max-screen(768px)
+    //   right: -12% 
+    //   top: 60px
+  .yeip4
+    position: absolute
+    top: 60px
+    left: -170px
+    z-index: -1
+    // +max-screen(768px) 
+    //   left: -10% 
+    //   top: 100px
+  .spotify4
+    position: absolute
+    top: 350px
+    left: -127px
+    z-index: -1
+    // +max-screen(768px) 
+    //   left: -12% 
+    //   top: 250px
+
+.iphone-container5
+  +clr
+
+  .text-block__right
+    margin-left: 860px
+    margin-right: 50px
+    +screen(1060, 1280)
+      margin-left: 650px
+      margin-right: 30px 
+    +screen(320, 1060)
+      margin-left: 0
+      margin-right: 0
+      text-align: center
+    p
+      padding-right: 35px
+      +screen(320, 1280)
+        padding-right: 0
+
+    .mini-icons
+
+      i
+        cursor: pointer
+        display: inline-block
+        margin-right: 10px
+
+      .mini-tictac
+        +s(mini-tictac)
+      .mini-fight
+        +s(mini-fight)
+
+.iphone-section5
+  width: 349px
+  float: left
+  margin-top: -520px
+  margin-left: 245px
+  position: relative
+  +screen(320, 1060)
+    margin-top: 80px
+  +min-screen(1060)
+    margin-left: 245px
+    margin-top: -490px
+  +screen(1060, 1280)
+    margin-left: 120px
+
+
+  .fight
+    position: absolute
+    top: 60px
+    left: -160px
+    z-index: -1
+    // +max-screen(768px) 
+    //   left: -10% 
+    //   top: 100px
+  .tictac
+    position: absolute
+    top: 20px
+    right: -180px
+    z-index: -1
+    // +max-screen(768px)
+    //   right: -12% 
+    //   top: 60px
+
+.iphone-container6
+  margin-bottom: 100px
+  +max-screen(600px)
+    margin-bottom: 50px
+  +clr
+
+  .text-block
+    padding-right: 60px
+    +screen(320, 1060)
+      padding-right: 0
+
+    .mini-icons
+
+      i
+        cursor: pointer
+        display: inline-block
+
+      .mini-vimeo
+        +s(mini-vimeo)
+
+
+.iphone-section6
+  width: 349px
+  float: right
+  margin-right: 163px
+  margin-top: -500px
+  position: relative
+  +screen(320, 1060)
+    margin-top: 80px
+  // +min-screen(1060)
+  //   margin-top: -450px
+
+  .vimeo6
+    position: absolute
+    top: 60px
+    left: -200px
+    z-index: -1
+    // +max-screen(768px) 
+    //   left: -15% 
+    //   top: 100px
+
+.iphone-section2,
+.iphone-section4,
+.iphone-section6
+  margin-right: 235px
+  +screen(1060, 1280)
+    margin-right: 80px
+
+
+.text-block
+
+  h2
+    color: #51b5ec
+    font-family: Roboto
+    font-size: 48px
+    font-weight: 700
+    +screen(320, 1024)
+      font-size: 42px
+
+  p
+    color: #6b6b6b
+    font-family: Roboto
+    font-size: 25px
+    font-weight: 300
+    margin: 17px 0 30px 0
+    padding-right: 35px
+    +screen(320, 1200)
+      padding-right: 0
+
+.text-block__left
+  margin-right: 750px
+  margin-left: 155px
+  +screen(1060, 1280)
+    margin-left: 40px
+    margin-right: 600px
+  +screen(320, 1060)
+    text-align: center
+    margin-right: 0
+    margin-left: 0
+
+
+.text-block__right
+  margin-left: 790px
+  margin-right: 50px
+  +screen(1060, 1280)
+    margin-right: 40px
+    margin-left: 700px
+  +screen(320, 1060) 
+    margin-left: 0
+    margin-right: 0
+    text-align: center
+  p
+    padding-right: 95px
+    +screen(320, 1280)
+      padding-right: 0
+  
+.iphone-section
+  position: relative
+  z-index: 2
+
+.iphone-section2,
+.iphone-section3,
+.iphone-section4,
+.iphone-section5,
+.iphone-section6
+  position: relative
+  z-index: 2
+  +screen(320, 1060)
+    float: none
+    margin-bottom: 50px
+    margin-left: auto
+    margin-right: auto
+
+  i
+    // +transition(all .1s ease-in-out)
+    &:hover
+      // +transform(scale(1.1))
+
+  +screen(769, 959)
+    float: none
+    margin-bottom: 50px
+    margin-left: auto
+    margin-right: auto
+    i
+      display: inline-block
+
+.main-footer
+  text-align: center
+  padding: 30px 0
+  +max-screen(568px)
+    padding-bottom: 100px
+
+  p
+    color: #6b6b6b
+    font-family: "roboto"
+    font-size: 18px
+    font-weight: 100
+
+
+  ul
+    margin-bottom: 20px
+
+  li
+    display: inline-block
+    margin-left: 20px
+    vertical-align: middle
+
+  i
+    display: inline-block
+    
+  .social-twitter
+    +s(social-twitter)
+    +retina
+      +sr('social-twitter_@2x', $icons-retina)
+    &:hover
+      +retina
+        +sr('social-twitter--hover_@2x', $icons-retina)
+      +s(social-twitter--hover)
+  .social-fb
+    +s(social-fb)
+    +retina
+      +sr('social-fb_@2x', $icons-retina)
+    &:hover
+      +retina
+        +sr('social-fb--hover_@2x', $icons-retina)
+      +s(social-fb--hover)
+  .social-email
+    +retina
+      +sr('social-email_@2x', $icons-retina)
+    +s(social-email)
+    &:hover
+      +retina
+        +sr('social-email--hover_@2x', $icons-retina)
+      +s(social-email--hover)
+
+input
+  +placeholder
+    height: inherit
+    line-height: inherit
+
+.fixed-form
+  display: none
+  
+  +max-screen(568px)
+    text-align: center
+    background: #262A36 
+    padding: 20px 0
+    -webkit-overflow-scrolling: touch
+    display: block
+    z-index: 10
+    max-width: 100%
+    position: fixed  
+    bottom: 0
+    left: 0
+    right: 0
+
+  input
+    border: 1px solid #6b6b6b
+    font-family: "roboto"
+    font-size: 20px
+    height: 40px
+    border-radius: 5px
+    background: #262a36
+    appearance: none
+    -moz-appearance: none
+    -webkit-appearance: none
+    +placeholder
+      height: inherit
+      vertical-align: bottom
+
+  input[type="email"]
+    padding: 0 10px 0 10px
+    color: #51b5ec
+    font-weight: 100
+    width: 65%
+
+    &.success
+      +placeholder-color(green)
+    &.error
+      +placeholder-color(red)
+
+    &:focus
+      +iphone4
+        margin-left: -90px
+        width: 55%
+      +iphone5
+        margin-left: -90px
+        width: 55%
+
+
+  input[type=submit]
+    background: #51b5ec
+    color: white
+    padding: 0 10px
+
